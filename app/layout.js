@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
+import { Tauri } from "next/font/google";
 import "./globals.css";
+import Header from "./Components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Tauri({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+        <h1>Footer</h1>
+      </body>
     </html>
   );
 }
